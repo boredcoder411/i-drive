@@ -7,5 +7,5 @@ cargo run --release --example <examplename>
 ```
 
 ## Some credits
-The c part was adapted from https://github.com/armlabs/ssd1306_linux
-The rust bindings are generated when cargo build is ran
+ - The c part was adapted from https://github.com/armlabs/ssd1306_linux
+ - The rust bindings are generated when cargo build is ran
