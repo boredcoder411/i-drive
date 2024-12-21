@@ -1,4 +1,4 @@
-# display_crate
+# i_drive
 probably the ugliest program in the entire distribution, abandon all hope when cloning this repo
 
 ## Running
