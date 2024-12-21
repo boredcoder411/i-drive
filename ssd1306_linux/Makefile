@@ -3,11 +3,12 @@ CFLAGS = -fPIC -Wall -Wextra -O2
 LDFLAGS = -shared
 TARGET = libssd1306.so
 
-SRC = main.c linux_i2c.c ssd1306.c
+SRC = linux_i2c.c ssd1306.c
 HEADERS = linux_i2c.h ssd1306.h font.h
 OBJS = $(SRC:.c=.o)
 
 all: $(TARGET)
+	rm -f $(OBJS)
 
 $(TARGET): $(OBJS)
 	$(CC) $(LDFLAGS) -o $@ $(OBJS)
@@ -17,4 +18,3 @@ $(TARGET): $(OBJS)
 
 clean:
 	rm -f $(OBJS) $(TARGET)
-
