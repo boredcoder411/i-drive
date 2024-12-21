@@ -3,9 +3,9 @@ probably the ugliest program in the entire distribution, abandon all hope when c
 
 ## Running
 ```sh
-cargo run --release
+cargo run --release --example <examplename>
 ```
 
-## A few words
+## Some credits
 The c part was adapted from https://github.com/armlabs/ssd1306_linux
 The rust bindings were generated with the bindgen cli, not crate (couldn't get it to work)
