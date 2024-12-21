@@ -30,6 +30,21 @@ fn main() {
         );
     }
 
+    let bindings = bindgen::Builder::default()
+        .header("ssd1306_linux/ssd1306.h")
+        .raw_line("#![allow(dead_code)]")
+        .raw_line("#![allow(non_camel_case_types)]")
+        .raw_line("#![allow(non_upper_case_globals)]")
+        .generate()
+        .expect("Unable to generate bindings");
+
+    let out_path = Path::new("src/ssd1306_bindings.rs");
+
+    bindings
+        .write_to_file(out_path)
+        .expect("Couldn't write bindings!");
+
+    println!("cargo:rerun-if-changed=ssd1306_linux/ssd1306.h");
     println!("cargo:rustc-link-search=native=libs");
     println!("cargo:rustc-link-lib=ssd1306");
 }
