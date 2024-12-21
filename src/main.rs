@@ -22,7 +22,7 @@ fn main() {
 
         rc += ssd1306_bindings::ssd1306_oled_set_rotate(0);
 
-        rc += ssd1306_oled_set_XY(1, 7);
+        rc += ssd1306_oled_set_XY(1, 1);
 
         println!("rc: {}", rc);
     }
