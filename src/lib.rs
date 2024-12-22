@@ -38,6 +38,7 @@ pub fn screen_write(c_string_ptr: *mut u8) -> u8 {
 pub fn screen_clear() {
     unsafe {
         ssd1306_oled_clear_screen();
+        ssd1306_oled_set_XY(1, 1);
     }
 }
 
