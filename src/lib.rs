@@ -20,8 +20,6 @@ pub fn screen_init(node_address: u8) -> u8 {
         rc += ssd1306_oled_set_rotate(0);
         rc += ssd1306_oled_set_XY(1, 1);
 
-        println!("rc: {}", rc);
-
         rc
     }
 }
@@ -29,7 +27,6 @@ pub fn screen_init(node_address: u8) -> u8 {
 pub fn screen_write(c_string_ptr: *mut u8) -> u8 {
     unsafe {
         let result = ssd1306_oled_write_string(SSD1306_FONT_NORMAL as u8, c_string_ptr);
-        println!("Result: {}", result);
 
         result
     }
